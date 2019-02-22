@@ -17,17 +17,12 @@ class App extends React.Component {
     this.setState({ product_id: Math.ceil(Math.random() * 100) });
   }
 
-  onClick(e) {
-    // this function will be passed down to Tony's component
-    // when a related item is clicked
-    //  grab that product's id and set the 'global' state with it
-
-    // example code: will need to be updated based on Tony's architecture
-
-    this.setState({ product_id: e.target.id });
-  }
-
   render() {
+    localStorage.setItem("product_id", this.state.product_id);
+    console.log(
+      "product_id from local storage->",
+      localStorage.getItem("product_id")
+    );
     return (
       <div>
         <button onClick={this.randomize}>random item</button>
@@ -41,7 +36,8 @@ class App extends React.Component {
           </div>
           <div id="similar-options" className="related" style={related} />
         </div>
-        <Reviews product_id={this.state.product_id} />
+        {/* <Reviews product_id={this.state.product_id} /> */}
+        <div id="reviews" />
       </div>
     );
   }
