@@ -24,7 +24,6 @@ class App extends React.Component {
     );
     return (
       <div>
-        <button onClick={this.randomize}>random item</button>
         <div style={outerWrap}>
           <div style={innerWrap}>
             {/* <Gallery id={this.state.product_id} style={gallery} /> */}
