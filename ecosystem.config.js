@@ -13,7 +13,8 @@ module.exports = {
       ref: "origin/master",
       repo: "https://github.com/the-home-repot/reviews-proxy.git",
       path: "/home/ubuntu/FEC-proxy",
-      "post-deploy": "npm install && pm2 startOrRestart ecosystem.config.js"
+      "post-deploy":
+        "npm install && npm run react-deploy && pm2 startOrRestart ecosystem.config.js"
     }
   }
 };
