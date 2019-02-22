@@ -5,7 +5,6 @@ class App extends React.Component {
   constructor(props) {
     super(props);
 
-    this.onClick = this.onClick.bind(this);
     this.randomize = this.randomize.bind(this);
 
     this.state = {
