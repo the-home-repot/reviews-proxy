@@ -4,13 +4,36 @@ import ReactDOM from "react-dom";
 class App extends React.Component {
   constructor(props) {
     super(props);
+
+    this.onClick = this.onClick.bind(this);
+    this.randomize = this.randomize.bind(this);
+
+    this.state = {
+      product_id: Math.ceil(Math.random() * 100)
+    };
+  }
+
+  randomize() {
+    this.setState({ product_id: Math.ceil(Math.random() * 100) });
+  }
+
+  onClick(e) {
+    // this function will be passed down to Tony's component
+    // when a related item is clicked
+    //  grab that product's id and set the 'global' state with it
+
+    // example code: will need to be updated based on Tony's architecture
+
+    this.setState({ product_id: e.target.id });
   }
 
   render() {
     return (
       <div>
+        <button onClick={this.randomize}>random item</button>
         <div style={outerWrap}>
           <div style={innerWrap}>
+            {/* <Gallery id={this.state.product_id} style={gallery} /> */}
             <div id="photos" className="gallery" style={gallery} />
             <div className="overview" style={overview}>
               OVERVIEW
@@ -18,7 +41,7 @@ class App extends React.Component {
           </div>
           <div id="similar-options" className="related" style={related} />
         </div>
-        <div id="Reviews" />
+        <Reviews product_id={this.state.product_id} />
       </div>
     );
   }
@@ -38,7 +61,7 @@ const innerWrap = {
 };
 
 const gallery = {
-  flex: ".6",
+  maxWidth: "60%",
   height: "600px"
   // backgroundColor: "#cccccc",
   // border: "1px solid green",
@@ -46,7 +69,7 @@ const gallery = {
 };
 
 const overview = {
-  flex: ".4",
+  width: "40%",
   height: "600px",
   backgroundColor: "#cccccc",
   border: "1px solid red",
