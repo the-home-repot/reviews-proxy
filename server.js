@@ -34,7 +34,11 @@ app.get("/getFiveRandom", (req, res) => {
 
 app.get("/products/:id/reviews", (req, res) => {
   axios
-    .get(`http://localhost:3030/products/${req.params.id}/reviews`)
+    .get(
+      `http://ec2-13-58-187-52.us-east-2.compute.amazonaws.com/${
+        req.params.id
+      }/reviews`
+    )
     .then(product => {
       res.json(product.data);
     })
