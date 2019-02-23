@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import Header from "./Header.js";
 
 class App extends React.Component {
   constructor(props) {
@@ -10,11 +11,12 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
+      <div style={appStyle}>
+        <Header />
         <div style={outerWrap}>
           <div style={innerWrap}>
             <div id="photos" className="gallery" style={gallery} />
-            <div className="overview" style={overview}>
+            <div id="product-overview" className="overview" style={overview}>
               OVERVIEW
             </div>
           </div>
@@ -26,7 +28,13 @@ class App extends React.Component {
   }
 }
 
+const appStyle = {
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "space-between"
+};
 const outerWrap = {
+  marginTop: "50px",
   width: "100%",
   display: "flex",
   flexDirection: "column",
@@ -49,10 +57,10 @@ const gallery = {
 
 const overview = {
   width: "40%",
-  height: "600px",
-  backgroundColor: "#cccccc",
-  border: "1px solid red",
-  color: "red"
+  height: "600px"
+  // backgroundColor: "#cccccc",
+  // border: "1px solid red",
+  // color: "red"
 };
 
 const related = {

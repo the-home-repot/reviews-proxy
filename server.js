@@ -32,6 +32,22 @@ app.get("/getFiveRandom", (req, res) => {
     });
 });
 
+app.get("/productinfo/:id", (req, res) => {
+  axios
+    .get(
+      `http://ec2-13-59-174-32.us-east-2.compute.amazonaws.com:3030/productinfo/${
+        req.params.id
+      }`
+    )
+    .then(product => {
+      res.json(product.data);
+    })
+    .catch(err => {
+      console.log("error in Remingtons GET request");
+      res.sendStatus(400);
+    });
+});
+
 // app.get("/products/:id/reviews", (req, res) => {
 //   axios
 //     .get(
