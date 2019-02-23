@@ -5,28 +5,14 @@ class App extends React.Component {
   constructor(props) {
     super(props);
 
-    this.randomize = this.randomize.bind(this);
-
-    this.state = {
-      product_id: Math.ceil(Math.random() * 100)
-    };
-  }
-
-  randomize() {
-    this.setState({ product_id: Math.ceil(Math.random() * 100) });
+    this.state = {};
   }
 
   render() {
-    localStorage.setItem("product_id", this.state.product_id);
-    console.log(
-      "product_id from local storage->",
-      localStorage.getItem("product_id")
-    );
     return (
       <div>
         <div style={outerWrap}>
           <div style={innerWrap}>
-            {/* <Gallery id={this.state.product_id} style={gallery} /> */}
             <div id="photos" className="gallery" style={gallery} />
             <div className="overview" style={overview}>
               OVERVIEW
@@ -34,8 +20,7 @@ class App extends React.Component {
           </div>
           <div id="similar-options" className="related" style={related} />
         </div>
-        {/* <Reviews product_id={this.state.product_id} /> */}
-        <div id="reviews" />
+        <div id="reviews" className="reviews" />
       </div>
     );
   }
