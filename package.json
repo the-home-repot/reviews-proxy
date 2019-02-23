@@ -8,7 +8,8 @@
     "start": "node server.js",
     "react-dev": "webpack -d -w",
     "react-deploy": "webpack --mode production",
-    "deploy": "pm2 deploy ecosystem.config.js production"
+    "deploy": "pm2 deploy ecosystem.config.js production",
+    "deploy-setup": "pm2 deploy ecosystem.config.js production setup"
   },
   "repository": {
     "type": "git",

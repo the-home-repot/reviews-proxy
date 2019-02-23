@@ -8,7 +8,7 @@ module.exports = {
   deploy: {
     production: {
       user: "ubuntu",
-      host: "ec2-3-16-214-81.us-east-2.compute.amazonaws.com",
+      host: "ec2-52-14-188-168.us-east-2.compute.amazonaws.com",
       key: "~/.ssh/FEC-proxy.pem",
       ref: "origin/master",
       repo: "https://github.com/the-home-repot/reviews-proxy.git",
