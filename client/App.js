@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import Header from "./Header.js";
+import Footer from "./Footer.js";
 
 class App extends React.Component {
   constructor(props) {
@@ -23,6 +24,7 @@ class App extends React.Component {
           <div id="similar-options" className="related" style={related} />
         </div>
         <div id="reviews" className="reviews" />
+        <Footer />
       </div>
     );
   }
@@ -34,7 +36,7 @@ const appStyle = {
   justifyContent: "space-between"
 };
 const outerWrap = {
-  marginTop: "50px",
+  marginTop: "125px",
   width: "100%",
   display: "flex",
   flexDirection: "column",
@@ -49,7 +51,8 @@ const innerWrap = {
 
 const gallery = {
   maxWidth: "60%",
-  height: "600px"
+  height: "600px",
+  marginLeft: "8px"
   // backgroundColor: "#cccccc",
   // border: "1px solid green",
   // color: "green"
@@ -57,7 +60,8 @@ const gallery = {
 
 const overview = {
   width: "40%",
-  height: "600px"
+  height: "600px",
+  marginRight: "8px"
   // backgroundColor: "#cccccc",
   // border: "1px solid red",
   // color: "red"

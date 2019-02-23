@@ -8,17 +8,15 @@ const Header = props => (
 );
 
 const header = {
-  position: "fixed",
+  position: "absolute",
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
-  height: "50px",
-  width: "98.8%",
-  marginTop: "-10px",
+  height: "125px",
+  width: "100%",
   backgroundColor: "white",
-  border: "1px solid #f96302",
-  borderTop: "none",
-  borderRadius: "5px"
+  borderBottom: "1px solid #f96302",
+  opacity: "1"
 };
 
 const title = {
