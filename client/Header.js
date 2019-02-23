@@ -17,12 +17,16 @@ const header = {
   marginTop: "-10px",
   backgroundColor: "white",
   border: "1px solid #f96302",
+  borderTop: "none",
   borderRadius: "5px"
 };
 
 const title = {
-  fontSize: "24px",
+  fontSize: "32px",
   color: "#f96302",
+  fontFamily:
+    "helvetica-neue-light, 'Helvetica Neue', Helvetica, Arial, sans-serif",
+  fontWeight: "400",
   marginLeft: "5px"
 };
 
@@ -31,4 +35,5 @@ const logo = {
   height: "45px",
   borderRadius: "1px"
 };
+
 export default Header;

@@ -11,8 +11,8 @@ app.get("/products/:id", (req, res) => {
     .get(
       `http://ec2-3-93-54-61.compute-1.amazonaws.com/products/${req.params.id}`
     )
-    .then(product => {
-      res.json(product.data);
+    .then(response => {
+      res.json(response.data);
     })
     .catch(err => {
       console.log("Error with GET request in proxy");
@@ -23,8 +23,8 @@ app.get("/products/:id", (req, res) => {
 app.get("/getFiveRandom", (req, res) => {
   axios
     .get(`http://ec2-3-80-146-248.compute-1.amazonaws.com/getFiveRandom`)
-    .then(product => {
-      res.json(product.data);
+    .then(response => {
+      res.json(response.data);
     })
     .catch(err => {
       console.log("Error with GET request in proxy");
@@ -39,8 +39,8 @@ app.get("/productinfo/:id", (req, res) => {
         req.params.id
       }`
     )
-    .then(product => {
-      res.json(product.data);
+    .then(response => {
+      res.json(response.data);
     })
     .catch(err => {
       console.log("error in Remingtons GET request");
