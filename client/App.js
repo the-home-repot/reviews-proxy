@@ -10,6 +10,14 @@ class App extends React.Component {
     this.state = {};
   }
 
+  componentDidMount() {
+    const event = new CustomEvent("updateProduct", {
+      detail: Math.ceil(Math.random() * 100)
+    });
+    setTimeout(() => window.dispatchEvent(event), 100);
+    console.log(event);
+  }
+
   render() {
     return (
       <div style={appStyle}>
@@ -17,9 +25,7 @@ class App extends React.Component {
         <div style={outerWrap}>
           <div style={innerWrap}>
             <div id="photos" className="gallery" style={gallery} />
-            <div id="product-overview" className="overview" style={overview}>
-              OVERVIEW
-            </div>
+            <div id="product-overview" className="overview" style={overview} />
           </div>
           <div id="similar-options" className="related" style={related} />
         </div>
@@ -53,25 +59,16 @@ const gallery = {
   maxWidth: "60%",
   height: "600px",
   marginLeft: "8px"
-  // backgroundColor: "#cccccc",
-  // border: "1px solid green",
-  // color: "green"
 };
 
 const overview = {
   width: "40%",
   height: "600px",
   marginRight: "8px"
-  // backgroundColor: "#cccccc",
-  // border: "1px solid red",
-  // color: "red"
 };
 
 const related = {
   height: "500px"
-  // backgroundColor: "#cccccc",
-  // border: "1px solid yellow",
-  // color: "yellow"
 };
 
 ReactDOM.render(<App />, document.getElementById("app"));

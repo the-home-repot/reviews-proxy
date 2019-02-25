@@ -15,7 +15,7 @@ const header = {
   height: "125px",
   width: "100%",
   backgroundColor: "white",
-  borderBottom: "1px solid #f96302",
+  borderBottom: "3px solid #f96302",
   opacity: "1"
 };
 
