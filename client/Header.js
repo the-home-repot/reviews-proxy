@@ -2,7 +2,9 @@ import React from "react";
 
 const Header = props => (
   <div style={header}>
-    <img src="./lib/the-home-repot.png" style={logo} />
+    <div style={logoBox}>
+      <img src="./lib/the-home-repot.png" style={logo} />
+    </div>
     <h1 style={title}>The Home Repot</h1>
   </div>
 );
@@ -19,6 +21,8 @@ const header = {
   opacity: "1"
 };
 
+const logoBox = {};
+
 const title = {
   fontSize: "32px",
   color: "#f96302",
@@ -29,8 +33,8 @@ const title = {
 };
 
 const logo = {
-  width: "45px",
-  height: "45px",
+  width: "65px",
+  height: "65px",
   borderRadius: "1px"
 };
 

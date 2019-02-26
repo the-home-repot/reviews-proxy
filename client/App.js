@@ -14,7 +14,7 @@ class App extends React.Component {
     const event = new CustomEvent("updateProduct", {
       detail: Math.ceil(Math.random() * 100)
     });
-    setTimeout(() => window.dispatchEvent(event), 100);
+    setTimeout(() => window.dispatchEvent(event), 1000);
     console.log(event);
   }
 
